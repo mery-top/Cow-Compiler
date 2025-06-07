@@ -81,6 +81,20 @@ int parse(Token *token, int *result){
     }
 
 
+void gen_asm(int *result){
+    FILE *asm_file = fopen("output.asm", "w");
+    fprintf(asm_file,
+    "global _start\n\n"
+    "_start:\n"
+    "    mov rax, 60\n"
+    "    mov rdi, %d\n"
+    "    syscall\n", *result);
+
+    fclose(asm_file);
+}
+
+
+
 //Main function
 
 int main(int argc, char *argv[]){
@@ -111,6 +125,8 @@ int main(int argc, char *argv[]){
     }else{
         printf("Error parsing");
     }
+
+    gen_asm(&result);
 
     free(tokens);
 
