@@ -15,15 +15,17 @@ typedef struct{
 } Token;
 
 
+//Tokenizer
+
 Token* tokenize(char *input){
     Token* tokens = malloc(256 *sizeof(Token));
     int pos =0;
 
     while(*input){
         if(isdigit(*input)){
-            token[pos].TokenType = TOKEN_NUMBER;
+            tokens[pos].type = TOKEN_NUMBER;
             //&input move the pointer till it has number
-            token[pos].value = strtol(input, &input, 10);
+            tokens[pos].value = strtol(input, &input, 10);
             pos++;
         }else if(*input == '+'){
             tokens[pos].type = TOKEN_PLUS;
@@ -38,10 +40,12 @@ Token* tokenize(char *input){
         }
     }
 
-    token[pos].type = TOKEN_END;
+    tokens[pos].type = TOKEN_END;
     return tokens;
     
 }
+
+//Parser
 
 int parse(Token *token, int *result){
     int pos =0;
@@ -76,6 +80,39 @@ int parse(Token *token, int *result){
     
     }
 
-int main(){
+
+//Main function
+
+int main(int argc, char *argv[]){
+
+    if(argc !=2){
+        printf("Give me the filename sucker");
+        return 1;
+    }
+
+    FILE *file = fopen(argv[1], "r");
+    if(!file){
+        printf("File didn't open sucker");
+        return 1;
+    }
+
+
+    char input[1024];
+    fread(input, 1, sizeof(input)-1, file);
+    input[1023] = '\0';
+    fclose(file);
+
+    Token *tokens = tokenize(input);
+    int result;
+
+
+    if(parse(tokens, &result)){
+        printf("Result: %d\n", result);
+    }else{
+        printf("Error parsing");
+    }
+
+    free(tokens);
+
     return 0;
 }
