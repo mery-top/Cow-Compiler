@@ -43,6 +43,38 @@ Token* tokenize(char *input){
     
 }
 
+int parse(Token *token, int *result){
+    int pos =0;
+
+    if(token[pos].type != TOKEN_NUMBER){
+        return 0;
+    }
+
+    *result = token[pos].value;
+    pos++;
+
+    while(token[pos].type != TOKEN_END){
+        if(token[pos].type == TOKEN_PLUS){
+            pos++;
+            if(token[pos].type !=TOKEN_NUMBER){
+                return 0;
+            }
+            *result+= token[pos].value;
+        }else if(token[pos].type == TOKEN_MINUS){
+            pos++;
+            if(token[pos].type !=TOKEN_NUMBER){
+                return 0;
+            }
+
+            *result-=token[pos].value;
+        }else{
+            return 0;
+        }
+        pos++;
+    }
+    return 1;
+    
+    }
 
 int main(){
     return 0;
