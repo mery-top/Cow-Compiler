@@ -12,10 +12,5 @@ all: $(OUT)
 $(OUT): $(SRC)
 	$(CC) $(SRC) -o $(OUT)
 
-
-run: $(OUT)
-	./$(OUT)
-
-
 clean:
 	rm -f build/cow

@@ -9,7 +9,7 @@ typedef enum{
     TOKEN_STAR,
     TOKEN_SLASH,
     TOKEN_ASSIGN,
-    TOKEN_EQ;
+    TOKEN_EQ,
     TOKEN_NOTEQ,
     TOKEN_LET,
     TOKEN_IDENTIFIER,

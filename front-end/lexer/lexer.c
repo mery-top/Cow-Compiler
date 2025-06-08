@@ -34,7 +34,7 @@ Token* tokenize(char *input){
                 input++;
             }
             tokens[pos].ident[len] = '\0';
-            if(strcmp(token[pos].ident, "let")== 0){
+            if(strcmp(tokens[pos].ident, "let")== 0){
                 tokens[pos].type = TOKEN_LET;
             }else{
                 tokens[pos].type = TOKEN_IDENTIFIER;

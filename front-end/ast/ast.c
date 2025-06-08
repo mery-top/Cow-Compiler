@@ -11,7 +11,7 @@ ASTNode *create_num_node(int value){
     return node;
 }
 
-ASTNode* create_var_node(char *name){
+ASTNode *create_var_node(char *name){
     ASTNode *node = malloc(sizeof(ASTNode));
     node->type = AST_VAR;
     strcpy(node->name, name);
