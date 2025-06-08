@@ -9,7 +9,7 @@ typedef enum{
     AST_ASSIGN
 } ASTNodeType;
 
-typedef struct{
+typedef struct ASTNode{
     ASTNodeType type;
     int value;
     char name[64];

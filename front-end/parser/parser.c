@@ -5,6 +5,8 @@
 
 int pos =0;
 
+ASTNode *parse_expression(Token *tokens);
+
 ASTNode *parse(Token *tokens){
     if(tokens[pos].type == TOKEN_LET){
         pos++;

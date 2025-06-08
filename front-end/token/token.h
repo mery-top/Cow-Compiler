@@ -23,7 +23,8 @@ typedef enum{
     TOKEN_RBRACE,
     TOKEN_LT,
     TOKEN_GT,
-    TOKEN_CALL
+    TOKEN_CALL,
+    TOKEN_END
 } TokenType;
 
 
