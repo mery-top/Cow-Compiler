@@ -27,6 +27,24 @@ Token* tokenize(char *input){
             tokens[pos++].type = TOKEN_SLASH; input++;
         } else if(*input == '='){
             tokens[pos++].type = TOKEN_ASSIGN; input++;
+        }else if(isalpha(*input)){
+            int len =0;
+            while(isalnum(*input)){
+                tokens[pos].ident[len++] = *input;
+                input++;
+            }
+            tokens[pos].ident[len] = '\0';
+            if(strcmp(token[pos].ident, "let")== 0){
+                tokens[pos].type = TOKEN_LET;
+            }else{
+                tokens[pos].type = TOKEN_IDENTIFIER;
+            }
+            pos++;
+        }else{
+            input++;
         }
     }
+
+    tokens[pos].type = TOKEN_END;
+    return tokens;
 }
