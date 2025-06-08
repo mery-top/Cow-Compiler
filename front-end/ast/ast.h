@@ -23,7 +23,6 @@ ASTNode *create_num_node(int value);
 ASTNode* create_var_node(char *name);
 ASTNode *create_var_declare_node(char *name, int value);
 ASTNode *create_binary_node(char op, ASTNode *left, ASTNode *right);
-ASTNode *create_var_assign_node(char *name, int value);
 void free_ast(ASTNode *node);
 
 #endif
