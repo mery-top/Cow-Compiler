@@ -21,7 +21,7 @@ typedef struct{
 
 ASTNode *create_num_node(int value);
 ASTNode *create_var_node(char *name);
-ASTNode *create_var_declare_node(char *name, int value);
+ASTNode *create_var_declare_node(char *name, ASTNode *value);
 ASTNode *create_binary_node(char op, ASTNode *left, ASTNode *right);
 void free_ast(ASTNode *node);
 
