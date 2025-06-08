@@ -8,12 +8,12 @@ void generate_code(ASTNode *node){
         node= node->left;
     }
 
-    if(node->left == AST_BINARY){
+    if(node->left->type == AST_BINARY){
         int left = node->left->value;
         int right = node->right->value;
 
         result = (node->op == '+') ? (left+right) : (left-right);
-    }else if(node->left == AST_NUMBER){
+    }else if(node->left->type == AST_NUMBER){
         result =  node->value;
     }
 
