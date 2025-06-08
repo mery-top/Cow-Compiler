@@ -18,10 +18,10 @@ ASTNode* create_var_node(char *name){
     return node;
 }
 
-ASTNode *create_var_declare_node(char *name, int value){
+ASTNode *create_var_declare_node(char *name, ASTNode* value){
     ASTNode *node = malloc(sizeof(ASTNode));
     node->type = AST_VAR_DECL;
-    node->value =value;
+    node->left =value;
     strcpy(node->name, name);
     return node;
 }
