@@ -14,7 +14,8 @@ ASTNode *parse(Token *tokens){
             return NULL;
         }
         char name[64];
-        strcpy(name, tokens[pos++].ident);
+        strcpy(name, tokens[pos].ident);
+        pos++;
 
         if(tokens[pos++].type != TOKEN_ASSIGN){
             return NULL;

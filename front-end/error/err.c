@@ -1,14 +1,41 @@
 #include <stdio.h>
 #include "err.h"
 
+
+void print_tree(ASTNode *tree){
+    if(!tree){
+        return;
+    }
+
+    switch(node->type){
+        case AST_NUMBER:
+            printf("Number: %d\n", tree->value);
+            break;
+
+        case AST_BINARY:
+            printf("Binary Op: %s\n", tree->op);
+            print_tree(tree->left);
+            print_tree(tree->right);
+            break;
+        
+        case AST_VAR_DECL:
+            printf("Variable: %s\n", tree->name);
+            print_tree(tree->left);
+            break;
+        
+        default:
+            printf("Unknown\n")
+    }
+}
+
 void print_tokens(Token *tokens){
     int i=0;
     while(tokens[i].type != TOKEN_END){
         printf("Token: %d: Type=%s", i, token_type_to_string(tokens[i].type));
         if(tokens[i].type == TOKEN_NUMBER){
-            printf("Value= %d", tokens[i].value);
+            printf(" Value= %d", tokens[i].value);
         }else if(tokens[i].type == TOKEN_IDENTIFIER){
-            printf("Identifier name= %s", tokens[i].ident);
+            printf(" name= %s", tokens[i].ident);
         }
         printf("\n");
         i++;
