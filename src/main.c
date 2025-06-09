@@ -25,13 +25,13 @@ int main(int argc, char *argv[]){
     fclose(file);
 
     Token *tokens = tokenize(input);
-    print_tokens(Token *tokens);
+    print_tokens(tokens);
 
-    // ASTNode *tree = parse(tokens);
-    // if (!tree) {
-    //     printf("Parse error\n");
-    //     return 1;
-    // }
+    ASTNode *tree = parse(tokens);
+    if (!tree) {
+        printf("Parse error\n");
+        return 1;
+    }
 
     generate_code(tree);
     free_ast(tree);
