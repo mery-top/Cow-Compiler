@@ -5,7 +5,7 @@
 #include "../front-end/parser/parser.h"
 #include "../front-end/token/token.h"
 #include "../back-end/evaluator/eval.h"
-
+#include "../front-end/error/err.h"
 
 int main(int argc, char *argv[]){
     if(argc !=2){
@@ -25,11 +25,13 @@ int main(int argc, char *argv[]){
     fclose(file);
 
     Token *tokens = tokenize(input);
-    ASTNode *tree = parse(tokens);
-    if (!tree) {
-        printf("Parse error\n");
-        return 1;
-    }
+    print_tokens(Token *tokens);
+
+    // ASTNode *tree = parse(tokens);
+    // if (!tree) {
+    //     printf("Parse error\n");
+    //     return 1;
+    // }
 
     generate_code(tree);
     free_ast(tree);

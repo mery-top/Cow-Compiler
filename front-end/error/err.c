@@ -4,11 +4,11 @@
 void print_tokens(Token *tokens){
     int i=0;
     while(tokens[i].type != TOKEN_END){
-        printf("Token: %d: Type:%s", i, token_type_to_string(tokens[i].type));
+        printf("Token: %d: Type=%s", i, token_type_to_string(tokens[i].type));
         if(tokens[i].type == TOKEN_NUMBER){
-            printf("Value: %d", tokens[i].value);
+            printf("Value= %d", tokens[i].value);
         }else if(tokens[i].type == TOKEN_IDENTIFIER){
-            printf("Identifier name: %s", tokens[i].ident);
+            printf("Identifier name= %s", tokens[i].ident);
         }
         printf("\n");
         i++;
