@@ -13,7 +13,7 @@ void print_tree(ASTNode *tree){
             break;
 
         case AST_BINARY:
-            printf("Binary Op: %s\n", tree->op);
+            printf("Binary Op: %c\n", tree->op);
             print_tree(tree->left);
             print_tree(tree->right);
             break;
