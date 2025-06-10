@@ -17,20 +17,18 @@ ASTNode *parse(Token *tokens){
         strcpy(name, tokens[pos].ident);
         pos++;
 
-        if(tokens[pos].type != TOKEN_ASSIGN){
+        if(tokens[pos++].type != TOKEN_ASSIGN){
             return NULL;
         }
-        
-        ASTNode *value = create_num_node(4);
 
-        // ASTNode *value = parse_expression(tokens);
-        pos++;
+        // ASTNode *value = create_num_node(4);
 
+        ASTNode *value = parse_expression(tokens);
         if(tokens[pos].type!= TOKEN_SEMICOLON){
             return NULL;
         }
 
-        return create_var_node(name);
+        return create_var_declare_node(name, value);
     }
 
     return create_num_node(4);
