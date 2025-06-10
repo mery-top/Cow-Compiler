@@ -16,7 +16,6 @@ Token* tokenize(char *input){
             tokens[pos].type = TOKEN_NUMBER;
             tokens[pos].value = strtol(input, &input, 10);
             pos++;
-            input++;
         }else if (*input == '+') {
             tokens[pos++].type = TOKEN_PLUS; input++;
         } else if (*input == '-') {
@@ -27,6 +26,8 @@ Token* tokenize(char *input){
             tokens[pos++].type = TOKEN_SLASH; input++;
         } else if(*input == '='){
             tokens[pos++].type = TOKEN_ASSIGN; input++;
+        }else if (*input == ';') {
+            tokens[pos++].type = TOKEN_SEMICOLON; input++;
         }else if(isalpha(*input)){
             int len =0;
             while(isalnum(*input)){

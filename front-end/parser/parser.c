@@ -10,27 +10,30 @@ ASTNode *parse_expression(Token *tokens);
 ASTNode *parse(Token *tokens){
     if(tokens[pos].type == TOKEN_LET){
         pos++;
-        if(tokens[pos++].type != TOKEN_IDENTIFIER){
+        if(tokens[pos].type != TOKEN_IDENTIFIER){
             return NULL;
         }
         char name[64];
         strcpy(name, tokens[pos].ident);
         pos++;
 
-        if(tokens[pos++].type != TOKEN_ASSIGN){
+        if(tokens[pos].type != TOKEN_ASSIGN){
             return NULL;
         }
+        
+        ASTNode *value = create_num_node(4);
 
-        ASTNode *value = parse_expression(tokens);
+        // ASTNode *value = parse_expression(tokens);
+        pos++;
 
         if(tokens[pos].type!= TOKEN_SEMICOLON){
             return NULL;
         }
 
-        return create_var_declare_node(name, value);
+        return create_var_node(name);
     }
 
-    return NULL;
+    return create_num_node(4);
 }
 
 ASTNode *parse_expression(Token *tokens){

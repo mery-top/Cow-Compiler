@@ -29,12 +29,12 @@ int main(int argc, char *argv[]){
 
     ASTNode *tree = parse(tokens);
     print_tree(tree);
-    if (!tree) {
-        printf("Parse error\n");
-        return 1;
-    }
+    // if (!tree) {
+    //     printf("Parse error\n");
+    //     return 1;
+    // }
 
-    generate_code(tree);
+    // generate_code(tree);
     free_ast(tree);
     free(tokens);
 
