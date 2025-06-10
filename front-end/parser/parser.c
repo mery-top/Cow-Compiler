@@ -43,12 +43,12 @@ ASTNode *parse_expression(Token *tokens){
     }else{
         return NULL;
     }
-
-    while(tokens[pos].type == TOKEN_PLUS || tokens[pos].type == TOKEN_MINUS ){
-        char op = (tokens[pos++].type == TOKEN_PLUS) ? '+' : '-';
-        ASTNode *right = parse_expression(tokens);
-        left = create_binary_node(op, left, right);
-    }
+    
+    // while(tokens[pos].type == TOKEN_PLUS || tokens[pos].type == TOKEN_MINUS ){
+    //     char op = (tokens[pos++].type == TOKEN_PLUS) ? '+' : '-';
+    //     ASTNode *right = parse_expression(tokens);
+    //     left = create_binary_node(op, left, right);
+    // }
 
     return left;
 }

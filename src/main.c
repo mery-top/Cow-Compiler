@@ -34,7 +34,7 @@ int main(int argc, char *argv[]){
     //     return 1;
     // }
 
-    // generate_code(tree);
+    generate_code(tree);
     free_ast(tree);
     free(tokens);
 
