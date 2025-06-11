@@ -7,7 +7,7 @@ int temp_id =0;
 char* new_temp(){
     static char buffer[34];
     snprintf(buffer, sizeof(buffer), "t%d", temp_id++);
-    return strdup(buffer);
+    return strdup(buffer); //heap
 }
 
 IRInstruction* generate_ir_from_ast(ASTNode* node){
