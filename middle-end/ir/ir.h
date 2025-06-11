@@ -18,10 +18,11 @@ typedef struct IRInstruction{
 } IRInstruction;
 
 
-
-
-
-
+IRInstruction* create_ir_load_const(char* dest, int value);
+IRInstruction* create_ir_binary(IRType type, char* dest, char* arg1, char* arg2);
+IRInstruction* create_ir_var(char* name);
+void append_ir(IRInstruction** list, IRInstruction* instr);
+void print_ir(IRInstruction* list);
 
 
 #endif
