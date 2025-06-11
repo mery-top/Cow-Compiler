@@ -1,6 +1,9 @@
  #include <stdio.h>
  #include <stdlib.h>
  #include "ir.h"
+ #include <string.h>
+
+
 
  IRInstruction* create_ir_load_const(char* dest, int value){
      IRInstruction* instr = malloc(sizeof(IRInstruction));
@@ -43,7 +46,7 @@ void print_ir(IRInstruction* list){
     while(list){
         switch(list->type){
             case IR_LOAD_CONST:
-                printf("%s : const %s\n", list->dest, list->value);
+                printf("%s : const %d\n", list->dest, list->value);
                 break;
             case IR_ADD:
                 printf("%s : add %s, %s\n", list->dest, list->arg1, list->arg2);

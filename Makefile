@@ -4,7 +4,10 @@ front-end/lexer/lexer.c \
 front-end/ast/ast.c \
 front-end/parser/parser.c \
 back-end/evaluator/eval.c \
-front-end/error/err.c
+front-end/error/err.c \
+middle-end/ir/ir.c \
+back-end/llvm/llvm.c \
+middle-end/irgen/irgen.c
 
 OUT = build/cow
 

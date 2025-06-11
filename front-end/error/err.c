@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "print.h"
+#include "err.h"
 
 
 void print_tree(ASTNode *tree){

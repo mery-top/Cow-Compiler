@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include "../ir/ir.h"
+#include "../../front-end/ast/ast.h"
+#include <string.h>
 
 int temp_id =0;
 
@@ -23,7 +25,7 @@ IRInstruction* generate_ir_from_ast(ASTNode* node){
 
         char* dest = new_temp();
         append_ir(&list, create_ir_binary(
-            node->op == '+' : IR_ADD : IR_SUB, 
+            node->op == '+' ? IR_ADD : IR_SUB, 
             dest, left->dest, right->dest
         ));
     }
