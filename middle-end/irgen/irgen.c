@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include "../ir/ir.h"
-#include "../../front-end/ast/ast.h"
 
 int temp_id =0;
 
