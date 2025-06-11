@@ -34,6 +34,10 @@ int main(int argc, char *argv[]){
     print_tree(tree);
 
     IRInstruction* ir = generate_ir_from_ast(tree);
+    if(!ir){
+        printf("Linkedlist error\n");
+        return 1;
+    }
     print_ir(ir);
     // if (!tree) {
     //     printf("Parse error\n");
