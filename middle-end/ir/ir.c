@@ -2,24 +2,16 @@
  #include <stdlib.h>
  #include "ir.h"
 
+
  /*
- typedef struct IRInstruction{
-    IRType type;
-    char dest[32];
-    char arg1[32];
-    char arg2[32];
-    int value;
-    struct IRInstruction* next;
-} IRInstruction;
-
-
-IRInstruction* create_ir_load_const(char* dest, int value);
-IRInstruction* create_ir_binary(IRType type, char* dest, char* arg1, char* arg2);
-IRInstruction* create_ir_var(char* name);
-void append_ir(IRInstruction** list, IRInstruction* instr);
-void print_ir(IRInstruction* list);
+ typedef enum{
+    IR_ADD,
+    IR_SUB,
+    IR_LOAD_CONST,
+    IR_VAR
+} IRType;
+ 
  */
-
  IRInstruction* create_ir_load_const(char* dest, int value){
      IRInstruction* instr = malloc(sizeof(IRInstruction));
      instr->type = IR_LOAD_CONST;
@@ -54,6 +46,28 @@ void append_ir(IRInstruction** list, IRInstruction* instr){
             temp = temp->next;
         }
         temp->next = instr;
+    }
+}
+
+void print_ir(IRInstruction* list){
+    while(list){
+        switch(list->type){
+            case IR_LOAD_CONST:
+                printf("%s : const %s\n", list->dest, list->value);
+                break;
+            case IR_ADD:
+                printf("%s : add %s, %s\n", list->dest, list->arg1, list->arg2);
+                break;
+            case IR_SUB:
+                printf("%s : sub %s, %s\n", list->dest, list->arg1, list->arg2);
+                break;
+            case IR_VAR:
+                printf("%s :  VAR\n", list->dest);
+                break;
+            default:
+                printf("unknown IR\n");
+        }
+        list = list->next;
     }
 }
 
