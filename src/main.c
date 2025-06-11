@@ -29,12 +29,19 @@ int main(int argc, char *argv[]){
 
     ASTNode *tree = parse(tokens);
     print_tree(tree);
+    IRInstruction *ir = generate_ir_from_ast(tree);
+    print_ir(ir);
     // if (!tree) {
     //     printf("Parse error\n");
     //     return 1;
     // }
 
-    generate_code(tree);
+    // generate_code(tree);
+
+    FILE *llvm_file = fopen("output.ll", "w");
+    generate_llvm(ir, llvm_file);
+    fclose(llvm_file);
+    
     free_ast(tree);
     free(tokens);
 
