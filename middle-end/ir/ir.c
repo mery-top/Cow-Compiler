@@ -2,16 +2,6 @@
  #include <stdlib.h>
  #include "ir.h"
 
-
- /*
- typedef enum{
-    IR_ADD,
-    IR_SUB,
-    IR_LOAD_CONST,
-    IR_VAR
-} IRType;
- 
- */
  IRInstruction* create_ir_load_const(char* dest, int value){
      IRInstruction* instr = malloc(sizeof(IRInstruction));
      instr->type = IR_LOAD_CONST;
