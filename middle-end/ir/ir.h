@@ -4,7 +4,8 @@
 typedef enum{
     IR_ADD,
     IR_SUB,
-    IR_LOAD_CONST
+    IR_LOAD_CONST,
+    IR_VAR
 } IRType;
 
 
