@@ -41,7 +41,7 @@ make
 make run
 ```
 ## Project Structure
-
+```
 cow-compiler/
 ├── front-end/
 │   ├── lexer/        # Lexical analyzer
@@ -59,6 +59,7 @@ cow-compiler/
 ├── Makefile          # Build system
 └── README.md         # Project readme
 
+```
 ## 🙌 Contributing
 
 We welcome all contributions — whether you're fixing bugs, improving documentation, or adding new features!
