@@ -34,7 +34,6 @@ int main(int argc, char *argv[]){
     print_tree(tree);
 
     IRInstruction* ir = generate_ir_from_ast(tree);
-    print_ir(ir);
 
     FILE *llvm_file = fopen("output.ll", "w");
     generate_llvm(ir, llvm_file);
