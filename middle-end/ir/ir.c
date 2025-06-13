@@ -37,7 +37,7 @@ void append_ir(IRInstruction** list, IRInstruction* instr){
         *list = instr;
     }else{
         IRInstruction* temp = *list;
-        while(temp!=NULL){
+        while(temp->next!=NULL){
             temp = temp->next;
         }
         temp->next = instr;
