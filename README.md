@@ -85,5 +85,25 @@ cow-compiler/
 └── README.md         # Project documentation
 ```
 
+## 💬 Join the Discussion
+
+Have questions, ideas, or suggestions? Want to contribute but don’t know where to start? Let’s talk!
+
+We use **GitHub Discussions** to foster a collaborative and welcoming community around the Cow Compiler project. Whether you're a beginner learning how compilers work or an experienced contributor looking to improve our IR/LLVM pipeline — you’re welcome here!
+
+### 🗣️ What You Can Do:
+
+- 💡 **Ask Questions**  
+  Not sure how something works? Curious about compiler internals? Ask away!
+
+- 🧠 **Share Ideas**  
+  Got a feature request or a suggestion? We’d love to hear your thoughts.
+
+- 🐞 **Report Issues**  
+  Found a bug or unexpected behavior? Drop a message before opening an issue.
+
+- 🙌 **Collaborate on Features**  
+  Join other developers to brainstorm or discuss new enhancements.
+
 ## 🙌 Contributing
 We welcome all contributions — whether you're fixing bugs, improving documentation, or adding exciting new features!
