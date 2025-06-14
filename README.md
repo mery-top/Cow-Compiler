@@ -10,7 +10,7 @@ This project walks you through a **complete compilation pipeline**, making it id
 
 This compiler includes the following stages:
 
-- **Lexer**: Tokenizes the input source code
+- **Lexer**: Tokenizes the input source code.
 - **Parser**: Parses tokens into an abstract syntax tree (AST)
 - **AST**: Represents the structure of the program
 - **IR Generation**: Converts the AST into a simple intermediate representation (IR)
